@@ -46,8 +46,11 @@ test_success 3 4 5 "Обычный треугольник"
 
 max_int32=$(echo 2^32 | bc)
 max_int64=$(echo 2^64 | bc)
+max_int128=$(echo 2^128 | bc)
 
 test_success $max_int32 $max_int32 $max_int32 "Равносторонний треугольник"
 test_success $max_int64 $max_int64 $max_int64 "Равносторонний треугольник"
+test_success $max_int128 $max_int128 $max_int128 "Равносторонний треугольник"
+
 
 echo "Все тесты успешно прошли"
