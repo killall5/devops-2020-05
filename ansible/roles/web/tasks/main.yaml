@@ -1,0 +1,20 @@
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+  become: yes
+
+- name: Install default server config
+  template:
+    src: default.j2
+    dest: /etc/nginx/sites-enabled/default
+    force: yes
+  become: yes
+  notify:
+    - reload nginx
+
+- name: Copy index.html
+  copy:
+    src: index.html
+    dest: /var/www/html
+  become: yes

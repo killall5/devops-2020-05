@@ -1,0 +1,5 @@
+server {
+    listen {{ nginx_port|default(80) }} default_server;
+
+    root /var/www/html;
+}
